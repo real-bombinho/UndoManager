@@ -16,6 +16,7 @@ Add to Form creation
 --------------------
 
   UIControls := [Edit1, ComboBox1, Edit2, Memo1];
+  
   UndoManager := TUndoManager.Create;
   UndoManager.AddFullState(UIControls);
 
