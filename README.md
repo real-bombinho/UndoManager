@@ -18,6 +18,7 @@ Add to Form creation
   UIControls := [Edit1, ComboBox1, Edit2, Memo1];
   
   UndoManager := TUndoManager.Create;
+  
   UndoManager.AddFullState(UIControls);
 
 AddFullState() will create a (here a first) snapshot of the listed controls
@@ -28,13 +29,16 @@ Add to the control.onChange methode
   var Ctrl: TWinControl;
 
   if UndoManager.Restoring then Exit;
+  
   Ctrl := TWinControl(Sender);
+  
   UndoManager.AddState(Ctrl);
 
 Use as
 ------
 
   UndoManager.Redo;
+  
   UndoManager.Undo;
 
   
